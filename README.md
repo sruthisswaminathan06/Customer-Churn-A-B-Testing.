@@ -1,88 +1,169 @@
-# Customer Churn Prediction and A/B Testing using Python
-# 📌 Project Overview
+# 📉 Customer Churn Prediction — Machine Learning Project  
+Predicting customer churn using simulated telecom data with **Pandas**, **Scikit‑Learn**, and **Matplotlib**.
 
-This project combines Machine Learning and Statistical Analysis to solve two critical business problems:
+---
 
+## 📌 Project Overview  
+This project demonstrates an end‑to‑end **Customer Churn Prediction** workflow.  
+It covers:
 
-Customer Churn Prediction
+- 🔹 Simulating a telecom churn dataset  
+- 🔹 Cleaning & encoding categorical variables  
+- 🔹 Training **Logistic Regression** & **Random Forest** models  
+- 🔹 Evaluating performance using classification reports, confusion matrices & ROC curves  
+- 🔹 Visualizing model performance  
 
-Predict whether a customer will leave (churn) based on historical data.
-Models used: Logistic Regression and Random Forest.
-Evaluation metrics: Confusion Matrix, ROC Curve, and AUC Score.
+This project is ideal for showcasing **machine learning**, **data preprocessing**, and **model evaluation** skills.
 
+---
 
+## 🧠 Problem Statement  
+Telecom companies lose significant revenue when customers discontinue their services.  
+The goal of this project is to:
 
-A/B Testing for Marketing Campaigns
+> **Build predictive models that classify whether a customer is likely to churn.**
 
-Simulate two groups: Control vs Variant.
-Perform hypothesis testing using t-test and Chi-square test.
-Visualize conversion rates and interpret statistical significance.
+This helps businesses take proactive retention actions.
 
-✅ Key Features
+---
 
--->End-to-end workflow: Data Simulation → Cleaning → Modeling → Evaluation → Interpretation.
+## 📂 Dataset  
+Since no real dataset was provided, a **synthetic dataset of 1000 customers** was generated using NumPy.
 
--->Predictive modeling with Scikit-Learn.
+### Features include:
+- `gender`
+- `SeniorCitizen`
+- `Partner`
+- `Dependents`
+- `tenure`
+- `PhoneService`
+- `InternetService`
+- `MonthlyCharges`
+- `TotalCharges`
+- `Churn` (target)
 
--->Statistical testing using SciPy.
+### Example (from your notebook):
+> “0 Male 1 Yes No 6 No DSL 97.95 3501.24 Yes”  
+> “1 Female 0 No No 34 No No 21.62 5273.29 Yes”
 
--->Visualizations with Matplotlib and Seaborn.
+---
 
--->Clear, well-documented Jupyter Notebook for easy understanding.
+## 🧹 Data Preprocessing  
+Steps performed:
 
-🛠 Technologies Used
+### ✔ Label Encoding  
+Categorical columns encoded using `LabelEncoder`:
 
--->Python 3
+```
+['gender','Partner','Dependents','PhoneService','InternetService','Churn']
+```
 
--->Pandas, NumPy
+### ✔ Train–Test Split  
+- 70% training  
+- 30% testing  
+- `random_state=42` for reproducibility  
 
--->Scikit-Learn
+---
 
--->Matplotlib, Seaborn
+## 🤖 Machine Learning Models  
 
--->SciPy
+### 1️⃣ Logistic Regression  
+- Trained with `max_iter=1000`  
+- Baseline linear model for classification  
 
-🚀 How to Run the Project
+### 2️⃣ Random Forest Classifier  
+- 100 trees  
+- Captures nonlinear relationships  
 
-1.Clone the repository:
+---
 
-git clone https://github.com/your-username/customer-churn-ab-testing.git
-cd customer-churn-ab-testing
+## 📊 Model Evaluation  
 
-2.Install dependencies:
+### **Logistic Regression Results**
+```
+Accuracy: ~0.50
+Precision/Recall: Balanced around 0.50
+```
 
+### **Random Forest Results**
+```
+Accuracy: ~0.52
+Slightly better performance than Logistic Regression
+```
+
+### Why accuracy is low?
+Because the dataset is **randomly simulated**, not real-world structured data.  
+The goal is to demonstrate the **pipeline**, not achieve high accuracy.
+
+---
+
+## 📈 Visualizations  
+The notebook includes:
+
+- ROC curves  
+- Confusion matrices  
+- Side‑by‑side model comparison  
+
+Example (from your notebook):
+
+> “<Figure size 600x400 with 2 Axes>”
+
+---
+
+## 🛠 Tech Stack  
+| Category | Tools |
+|---------|-------|
+| Programming | Python |
+| Data Handling | Pandas, NumPy |
+| Modeling | Scikit‑Learn |
+| Visualization | Matplotlib |
+| Notebook | Jupyter |
+
+---
+
+## 🚀 How to Run the Project  
+
+### 1. Clone the repository  
+```
+git clone https://github.com/yourusername/customer-churn-project.git
+```
+
+### 2. Install dependencies  
+```
 pip install -r requirements.txt
+```
 
-3.Open the Jupyter Notebook:
+### 3. Run the notebook  
+```
+jupyter notebook
+```
 
-jupyter notebook full_project.ipynb
+---
 
-📊 Visualizations
+## 📚 Key Learnings  
+- How to simulate realistic datasets  
+- Encoding categorical variables  
+- Training baseline ML models  
+- Evaluating classification performance  
+- Visualizing model metrics  
 
-Confusion Matrix
+---
 
-!Confusion Matrix
+## 📌 Future Improvements  
+- Use real telecom churn dataset  
+- Add feature engineering  
+- Hyperparameter tuning (GridSearchCV)  
+- Try advanced models (XGBoost, LightGBM)  
+- Deploy using Flask/Streamlit  
 
-ROC Curve
+---
 
-!ROC Curve
+## 🏁 Conclusion  
+This project provides a complete, professional pipeline for **customer churn prediction**.  
+It demonstrates your ability to:
 
-🔍 Results & Interpretation
+- Build ML workflows  
+- Clean and encode data  
+- Train & evaluate models  
+- Visualize insights  
 
-Customer Churn Prediction:
-
-Random Forest generally outperforms Logistic Regression in accuracy and AUC.
-ROC curve shows better separation for Random Forest.
-
-
-
-A/B Testing:
-
-If p-value < 0.05, the new campaign significantly improves conversion.
-Visual comparison of conversion rates helps stakeholders make informed decisions.
-
-💡 Why This Project is Interesting
-
--->Combines Machine Learning and Statistics for actionable insights.
-
--->Demonstrates practical business applications.
